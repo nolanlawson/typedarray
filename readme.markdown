@@ -50,6 +50,16 @@ With [npm](https://npmjs.org) do:
 npm install typedarray
 ```
 
+To run directly in a browser, just use either the `typedarray.js` or `typedarray.min.js`
+file provided in the `dist/` directory. The shims will automatically be added to the
+`window` object if they're not there.
+
+# build
+
+To build the browser files, just run
+
+    npm run build
+
 # license
 
 MIT
