@@ -507,6 +507,16 @@ function packF32(v) { return packIEEE754(v, 8, 23); }
   exports.Uint32Array = exports.Uint32Array || Uint32Array;
   exports.Float32Array = exports.Float32Array || Float32Array;
   exports.Float64Array = exports.Float64Array || Float64Array;
+
+  if (typeof window !== 'undefined') {
+    // shim these directly when we're in the browser
+    for (var key in typedarray) {
+      if (typedarray.hasOwnProperty(key) && !window[key]) {
+        window[key] = typedarray[key];
+      }
+    }
+  }
+
 }());
 
 //
